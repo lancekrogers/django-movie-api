@@ -1,3 +1,4 @@
+#from django.contrib.sites import requests
 from django.http import HttpResponse
 from django.shortcuts import render
 import json
@@ -6,13 +7,16 @@ import json
 
 
 # Get request view
+import requests
+
+
 def my_get_api(request):
-    response = request.GET('movie:movie_list')
+    response = requests.get('movie:movie_list')
 
 
    # response.content
    # variable = json.
-    return HttpResponse('hello')
+    return HttpResponse(response)
 
 
 
