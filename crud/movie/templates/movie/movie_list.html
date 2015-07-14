@@ -6,11 +6,11 @@
 </head>
 
 <body>
-<a href="{% url 'create_movie' %}">Create</a>
+<a href="{% url 'movie:create_movie' %}">Create</a>
 
 {% for movie in object_list %}
-    <div><a href="{% url 'movie_detail' movie.id %}">{{ movie.title }}</a>
-        <form method="POST" action="{% url 'delete_movie' movie.id %}">
+    <div><a href="{% url 'movie:movie_detail' movie.id %}">{{ movie.title }}</a>
+        <form method="POST" action="{% url 'movie:delete_movie' movie.id %}">
             {% csrf_token %}
         <button type="submit">Delete</button>
         </form>
