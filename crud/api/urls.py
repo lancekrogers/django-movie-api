@@ -3,6 +3,6 @@ from .views import my_get_api
 
 urlpatterns = [
 
-    url(r'^movie_list/', my_get_api, name='get_api')
+    url(r'^movie_list/$', my_get_api, name='get_api')
 
 ]

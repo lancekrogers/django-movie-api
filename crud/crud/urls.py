@@ -20,6 +20,7 @@ from django.contrib import admin
 urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^rest_api/', include('rest_api.urls', namespace='rest_api')),
     url(r'^api/', include('api.urls', namespace='api')),
     url(r'^', include('movie.urls', namespace='movie')),
 

@@ -1,22 +1,19 @@
 #from django.contrib.sites import requests
+from django.core import serializers
 from django.http import HttpResponse
 from django.shortcuts import render
 import json
-
+from movie.models import Movie
 # Create your views here.
 
 
 # Get request view
-import requests
+
 
 
 def my_get_api(request):
-    response = requests.get('movie:movie_list')
-
-
-   # response.content
-   # variable = json.
-    return HttpResponse(response)
+   qs = Movie.objects.all()
+   return HttpResponse(serializers.serialize('json', qs), content_type='application/json')
 
 
 
